@@ -11,7 +11,7 @@ const Homepage = () => {
   const fetchMovieData = async (query) => {
     try {
       setIsLoading(true);
-      const apiKey = "5098736358878f09ba6951686dac9c7e";
+      const apiKey = process.env.REACT_APP_API;
       let apiUrl = "https://api.themoviedb.org/3/discover/movie";
 
       if (query) {
@@ -22,8 +22,7 @@ const Homepage = () => {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MDk4NzM2MzU4ODc4ZjA9YmE2OTUxNjg2ZGFjOWM3ZSIsInN1YiI6IjY0ZmU1NTA6NzA2ZjBmMDA0OTFiNzcyYzAwY2FmMjIzZDg5ZmE3ZDM0NzFiMzUzNGI1MDYyMmE2MjJhNmY5OTMwMzEwYmI0MTQiLCJhdWQiOiI1MDk4NzM2MzU4ODc4ZjA5YmE2OTUxNjg2ZGFjOWM3ZSJ9.sqxEIwTSCQ0A-iXBTwP9KIdQffQpzuhH0Yz6n__wL3Y",
+          Authorization: process.env.REACT_APP_TMBD_API,
         },
       };
 

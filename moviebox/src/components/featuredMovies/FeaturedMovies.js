@@ -7,7 +7,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import MovieCard from "../card/MovieCard";
 import Grid from "@mui/material/Grid";
 import Loader from "../loader/Loader";
-// console.log(process.env.REACT_APP_TMBD_API)
+
 const FeaturedMovies = ({ results }) => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
