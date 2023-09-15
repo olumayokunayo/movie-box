@@ -6,6 +6,7 @@ import { Box, CardMedia } from "@mui/material";
 import imbdImage from "../../images/imdb.png";
 import { Link } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+
 const MovieCard = ({ movie, genres }) => {
   const genreIds = movie.genre_ids || [];
 
@@ -15,6 +16,11 @@ const MovieCard = ({ movie, genres }) => {
         return genre ? genre.name : "";
       })
     : [];
+
+  const releaseDate = new Date(movie.release_date);
+
+  const utcReleaseDate = releaseDate.toUTCString();
+
   return (
     <Link style={{ textDecoration: "none" }} to={`/movies/${movie.id}`}>
       <Card data-testid="movie-card" sx={{ position: "relative" }}>
@@ -32,7 +38,7 @@ const MovieCard = ({ movie, genres }) => {
             <FavoriteIcon sx={{ color: "#fff", "&:hover": { color: "red" } }} />
           </div>
           <Typography variant="body2" data-testid="movie-release-date">
-            {movie.release_date.slice(0, 4)}
+            {utcReleaseDate}
           </Typography>
           <Typography
             variant="body1"

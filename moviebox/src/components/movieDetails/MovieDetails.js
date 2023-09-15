@@ -48,6 +48,7 @@ const MovieDetails = () => {
 
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           setMovie(data);
           setIsLoading(false);
         } else {
