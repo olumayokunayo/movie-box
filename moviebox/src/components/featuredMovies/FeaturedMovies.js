@@ -27,7 +27,7 @@ const FeaturedMovies = ({ results }) => {
       };
 
       const response = await fetch(
-        "https://api.themoviedb.org/3/discover/movie",
+        "https://api.themoviedb.org/3/movie/top_rated",
         options
       );
       console.log(`response:`, response);
