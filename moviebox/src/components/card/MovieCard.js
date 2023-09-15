@@ -37,8 +37,12 @@ const MovieCard = ({ movie, genres }) => {
           <div style={{ position: "absolute", top: "2%" }}>
             <FavoriteIcon sx={{ color: "#fff", "&:hover": { color: "red" } }} />
           </div>
-          <Typography variant="body2" data-testid="movie-release-date">
-            {utcReleaseDate}
+          <Typography
+            variant="body2"
+            data-testid="movie-release-date"
+            sx={{ color: "gray" }}
+          >
+            {movie.release_date}
           </Typography>
           <Typography
             variant="body1"
