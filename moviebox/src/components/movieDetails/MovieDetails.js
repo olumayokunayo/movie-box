@@ -317,6 +317,7 @@ const MovieDetails = () => {
                     <Typography
                       variant="body2"
                       sx={{ marginTop: "1rem", lineHeight: 1.6 }}
+                      data-testid="movie-overview"
                     >
                       {movie.overview}
                     </Typography>
