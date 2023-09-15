@@ -34,6 +34,7 @@ const FeaturedMovies = ({ results }) => {
 
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         setMovies(data.results);
         console.log(movies);
         setIsLoading(false);
